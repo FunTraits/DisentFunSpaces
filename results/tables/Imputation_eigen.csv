@@ -1,0 +1,7 @@
+﻿Trait,Mean,SD,n_missing
+adult_svl_cm,0.98,0.271,5994
+fledging_age_d,0.479,0.29,5838
+incubation_d,0.424,0.259,5524
+litter_or_clutch_size_n,1.085,0.691,2093
+litters_or_clutches_per_y,0.697,0.272,5921
+longevity_y,1.181,0.306,6000

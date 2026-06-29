@@ -1,0 +1,9 @@
+# --- R / RStudio ---
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.bak
+# --- Données (à exclure si volumineuses/sensibles) ---
+/data
+/manuscript
