@@ -1,50 +1,103 @@
 # Disentangling Functional Spaces
 
-This repository contains the data, code, and figures supporting the article:
+This repository contains the code, figures, and result tables supporting the article:
 
-**Title:** *Disentangling functional spaces: Toward a pluralistic view of ecological roles in conservation*  
-**Journal:** *Ecography* 
-**Author:** Aurele Toussaint, Pablo Tedesco, Gael Grenouillet, Liis Kasari-Toussaint, Sébastien Brosse
+**Title:** *Disentangling functional spaces: Toward a pluralistic view of ecological roles in conservation*
+**Journal:** *Ecography*
+**Authors:** Aurèle Toussaint, Pablo Tedesco, Gaël Grenouillet, Liis Kasari-Toussaint, Sébastien Brosse
 **Affiliation:** CNRS, France
 
 ---
 
 ## 🗂️ Repository structure
 
-```textdata:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAbElEQVR4Xs2RQQrAMAgEfZgf7W9LAguybljJpR3wEse5JOL3ZObDb4x1loDhHbBOFU6i2Ddnw2KNiXcdAXygJlwE8OFVBHDgKrLgSInN4WMe9iXiqIVsTMjH7z/GhNTEibOxQswcYIWYOR/zAjBJfiXh3jZ6AAAAAElFTkSuQmCC
-DisentanglingFunctionalSpaces/
-├── data/               # Raw and processed data
-│   ├── raw/            # Original datasets (trait data, IUCN, etc.)
-│   ├── processed/      # Cleaned and formatted data used in the analyses
-│   └── metadata.csv    # Description and sources of all datasets
+```text
+DisentFunSpaces/
+├── scripts/                  # Analysis pipeline (sourced in numeric order by run_all.R)
+│   ├── 00_START_GeneralScript.R          # Environment init, global options, shared utils
+│   ├── 01_DATA_load_and_clean.R          # Preprocessing: traits, IUCN, imputation, PCoA, TPD
+│   ├── 03_FIGURE_FUn.R                    # Main figures
+│   ├── 03_FIGURE_FamilyFUn.R
+│   ├── 03_FIGURE_IUCN.R
+│   ├── 03_FIGURE_R2_aggregated_vs_disaggregated.R
+│   ├── 03_FIGURE_spaceall.R
+│   ├── 03_FIGURE_traitspaces.R
+│   ├── 04_SUPP_*.R                        # Supplementary analyses (Beak, CFA, imputation, PCA robustness, …)
+│   ├── 05_STAT_permutation_unique_species.R  # Permutation tests
+│   ├── setup_environment.R               # Helper scripts (not run by run_all.R)
 │
-├── scripts/            # Scripts used to run the analyses
-│   ├── 00_GeneralScript.R
-│   ├── 01_load_and_clean.R
-│   ├── 02_analyses_traitspaces.R
-│   ├── 03_analyses_clades.R
-│   └── 04_analyses_biogeo.R
+├── utils/                    # Custom functions and plotting helpers
+│   ├── functions.R
+│   ├── library.R
+│   ├── generate_FRic_maps.R
+│   ├── plot_MLD_map_cat.R
+│   ├── plot_SES_map_with_latprofile.R
+│   └── plot_diff_with_legend.R
 │
-├── results/            # Outputs of the analyses
-│   ├── figures/        # Main and supplementary figures
-│   ├── tables/         # Summary tables and results
+├── results/                  # Outputs of the analyses
+│   ├── figures/              # Main and supplementary figures (+ Framework.pptx)
+│   └── tables/               # Summary and result tables (.csv, .rds)
 │
-├── utils/              # Custom functions used in the analyses
-│   └── functions.R
-│   └── library.R
+├── data/                     # ⚠️ Not tracked (see Data availability) — raw/, processed/
 │
-├── README.md           # This file
-├── LICENSE             # License information 
-├── .gitignore          # Files to exclude from version control
-└── renv.lock           # For environment reproducibility
+├── run_all.R                 # Runs the full pipeline (sources numbered scripts sequentially)
+├── DisentFunSpaces.Rproj     # RStudio project file
+├── renv.lock.txt             # renv lockfile for environment reproducibility
+├── LICENSE.txt               # License information
+├── README.md                 # This file
+└── .gitignore
+```
 
+> **Note:** `data/` are listed in `.gitignore` and are **not** included in the Git repository.
+
+---
+
+## 📦 Data availability
+
+The `data/` folder (raw datasets, processed objects, and `metadata.xlsx`) is archived separately on **Figshare** and is required to reproduce the analyses.
+
+1. Download the data archive from Figshare: *[DOI to be added]*
+2. Unzip it at the root of the project so that the structure becomes:
+
+```text
+DisentFunSpaces/
+├── data/
+│   ├── raw/            # Original datasets (AVONET traits, BOTW ranges, phylogeny, IUCN, …)
+│   ├── processed/      # Cleaned and formatted objects produced by 01_DATA_load_and_clean.R
+```
+
+---
 
 ## 🧪 Reproducing the analysis
 
-This project uses [`renv`](https://rstudio.github.io/renv/) for dependency management.  
-To reproduce the exact package versions used in the analysis:
+This project uses [`renv`](https://rstudio.github.io/renv/) for dependency management.
 
 1. Clone the repository:
 
-```bash
-git clone https://github.com/AureleToussaint/DisentanglingFunctionalSpaces.git
+   ```bash
+   git clone https://github.com/FunTraits/DisentFunSpaces.git
+   cd DisentFunSpaces
+   ```
+
+2. Add the `data/` folder downloaded from Figshare (see **Data availability** above).
+
+3. Open `DisentFunSpaces.Rproj` in RStudio, then restore the environment and run the full pipeline:
+
+   ```r
+   # renv.lock is provided as renv.lock.txt — rename it if needed:
+   # file.rename("renv.lock.txt", "renv.lock")
+   renv::restore()
+   source("run_all.R")
+   ```
+
+   `run_all.R` sources every script in `scripts/` whose name matches `NN_*.R` (i.e. `00_`, `01_`, `03_`, `04_`, `05_`) in numeric order. Outputs are written to `results/figures/` and `results/tables/`.
+
+---
+
+## 📄 License
+
+See [`LICENSE.txt`](LICENSE.txt).
+
+## ✒️ Contact
+
+Aurèle Toussaint — CNRS, Toulouse, France — aurele.toussaint@cnrs.fr
