@@ -1,6 +1,11 @@
-# The hidden cost of a single index: dimension-explicit functional vulnerability across the global avifauna
+# Disentangling Functional Spaces
 
 This repository contains the data, code, and figures supporting the article:
+
+**Title:** *Disentangling functional spaces: Toward a pluralistic view of ecological roles in conservation*  
+**Journal:** *Ecography* 
+**Author:** Aurele Toussaint, Pablo Tedesco, Gael Grenouillet, Liis Kasari-Toussaint, Sébastien Brosse
+**Affiliation:** CNRS, France
 
 ---
 
@@ -12,16 +17,27 @@ DisentanglingFunctionalSpaces/
 │   ├── raw/            # Original datasets (trait data, IUCN, etc.)
 │   ├── processed/      # Cleaned and formatted data used in the analyses
 │   └── metadata.csv    # Description and sources of all datasets
+│
 ├── scripts/            # Scripts used to run the analyses
-├── figures/            # Outputs of the analyses
-├── tables/            # Outputs of the analyses
+│   ├── 00_GeneralScript.R
+│   ├── 01_load_and_clean.R
+│   ├── 02_analyses_traitspaces.R
+│   ├── 03_analyses_clades.R
+│   └── 04_analyses_biogeo.R
+│
+├── results/            # Outputs of the analyses
+│   ├── figures/        # Main and supplementary figures
+│   ├── tables/         # Summary tables and results
+│
 ├── utils/              # Custom functions used in the analyses
+│   └── functions.R
+│   └── library.R
+│
 ├── README.md           # This file
-├── LICENSE             # License information (default: CC-BY 4.0)
+├── LICENSE             # License information 
 ├── .gitignore          # Files to exclude from version control
-└── renv.lock           # Optional: for environment reproducibility
+└── renv.lock           # For environment reproducibility
 
-data are available in this repo: 
 
 ## 🧪 Reproducing the analysis
 
@@ -31,5 +47,4 @@ To reproduce the exact package versions used in the analysis:
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/AureleToussaint/FUSE_Bird.git
-
+git clone https://github.com/AureleToussaint/DisentanglingFunctionalSpaces.git

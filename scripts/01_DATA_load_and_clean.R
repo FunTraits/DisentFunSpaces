@@ -835,7 +835,7 @@ PCA_Birds_M$PCoA$vectors[,2] = PCA_Birds_M$PCoA$vectors[,2] * (-1)
 saveRDS(PCA_Birds_M, file = "data/processed/PCA_Birds_M.rds")
 
 TPDs_Birds_M = make.TPD.2D.high.def(traitsUSE = PCA_Birds_M$PCoA$vectors[,1:2],
-                                    dimensions = 2,alphaUse = 0.95,gridSize = 100,
+                                    dimensions = 2,alphaUse = 0.95,gridSize = 80,
                                     saveFile =  "data/processed/TPD_Birds_M.rds")
 rm(TPDs_Birds_M)
 
