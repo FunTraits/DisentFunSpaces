@@ -60,7 +60,7 @@ DisentFunSpaces/
 
 The `data/` folder (raw datasets, processed objects, and `metadata.xlsx`) is archived separately on **Zenodo** and is required to reproduce the analyses.
 
-1. Download the data archive from Zenodo: [10.5281/zenodo.21487107](https://doi.org/10.5281/zenodo.21487107)
+1. Download the data archive from Zenodo: [10.5281/zenodo.21487237](https://doi.org/10.5281/zenodo.21487237)
 2. Unzip it at the root of the project so that the structure becomes:
 
 ```text
