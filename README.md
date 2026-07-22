@@ -1,5 +1,9 @@
 # Disentangling Functional Spaces
 
+[![Data DOI](https://img.shields.io/badge/Data-10.5281%2Fzenodo.21487107-blue)](https://doi.org/10.5281/zenodo.21487107)
+<!-- Code archive badge — replace XXXXXXX with the DOI Zenodo mints on your first GitHub release:
+[![Code DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX) -->
+
 This repository contains the code, figures, and result tables supporting the article:
 
 **Title:** *Disentangling functional spaces: Toward a pluralistic view of ecological roles in conservation*
@@ -54,9 +58,9 @@ DisentFunSpaces/
 
 ## 📦 Data availability
 
-The `data/` folder (raw datasets, processed objects, and `metadata.xlsx`) is archived separately on **Figshare** and is required to reproduce the analyses.
+The `data/` folder (raw datasets, processed objects, and `metadata.xlsx`) is archived separately on **Zenodo** and is required to reproduce the analyses.
 
-1. Download the data archive from Figshare: *[DOI to be added]*
+1. Download the data archive from Zenodo: [10.5281/zenodo.21487107](https://doi.org/10.5281/zenodo.21487107)
 2. Unzip it at the root of the project so that the structure becomes:
 
 ```text
@@ -79,7 +83,7 @@ This project uses [`renv`](https://rstudio.github.io/renv/) for dependency manag
    cd DisentFunSpaces
    ```
 
-2. Add the `data/` folder downloaded from Figshare (see **Data availability** above).
+2. Add the `data/` folder downloaded from Zenodo (see **Data availability** above).
 
 3. Open `DisentFunSpaces.Rproj` in RStudio, then restore the environment and run the full pipeline:
 
@@ -91,6 +95,17 @@ This project uses [`renv`](https://rstudio.github.io/renv/) for dependency manag
    ```
 
    `run_all.R` sources every script in `scripts/` whose name matches `NN_*.R` (i.e. `00_`, `01_`, `03_`, `04_`, `05_`) in numeric order. Outputs are written to `results/figures/` and `results/tables/`.
+
+---
+
+## 📌 How to cite
+
+If you use this code or data, please cite the article and the archives:
+
+> Toussaint, A., Tedesco, P., Grenouillet, G., Kasari-Toussaint, L., & Brosse, S. Disentangling functional spaces: Toward a pluralistic view of ecological roles in conservation. *Ecography*. https://doi.org/<ARTICLE-DOI>
+
+- **Data:** [10.5281/zenodo.21487107](https://doi.org/10.5281/zenodo.21487107)
+- **Code:** *DOI minted by Zenodo on the first GitHub release — add it here.*
 
 ---
 
