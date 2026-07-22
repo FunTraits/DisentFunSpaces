@@ -1,6 +1,6 @@
 # Disentangling Functional Spaces
 
-[![Data DOI](https://img.shields.io/badge/Data-10.5281%2Fzenodo.21487107-blue)](https://doi.org/10.5281/zenodo.21487107)
+[![Data DOI](https://img.shields.io/badge/Data-10.5281%2Fzenodo.21487237-blue)](https://doi.org/10.5281/zenodo.21487237)
 <!-- Code archive badge — replace XXXXXXX with the DOI Zenodo mints on your first GitHub release:
 [![Code DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX) -->
 
@@ -104,7 +104,7 @@ If you use this code or data, please cite the article and the archives:
 
 > Toussaint, A., Tedesco, P., Grenouillet, G., Kasari-Toussaint, L., & Brosse, S. Disentangling functional spaces: Toward a pluralistic view of ecological roles in conservation. *Ecography*. https://doi.org/<ARTICLE-DOI>
 
-- **Data:** [10.5281/zenodo.21487107](https://doi.org/10.5281/zenodo.21487107)
+- **Data:** [10.5281/zenodo.21487237](https://doi.org/10.5281/zenodo.21487237)
 - **Code:** *DOI minted by Zenodo on the first GitHub release — add it here.*
 
 ---
